@@ -20,12 +20,14 @@ def get_spy_data():
         low_price = data['low']
         close_price = data['close']
         
-        # Build a string to display the data
-        result = f"""<h1>Stock Data for {symbol}</h1>
-                     <p>Open: {open_price}</p>
-                     <p>High: {high_price}</p>
-                     <p>Low: {low_price}</p>
-                     <p>Close: {close_price}</p>"""  # Ensure closing triple quotes are correctly placed
+        # Build a string to display the data using a simple concatenation method to avoid syntax issues
+        result = (
+            "<h1>Stock Data for " + symbol + "</h1>" +
+            "<p>Open: " + str(open_price) + "</p>" +
+            "<p>High: " + str(high_price) + "</p>" +
+            "<p>Low: " + str(low_price) + "</p>" +
+            "<p>Close: " + str(close_price) + "</p>"
+        )
         return result
     else:
         return "Failed to fetch data from Polygon API"
