@@ -25,11 +25,10 @@ def get_spy_data():
                      <p>Open: {open_price}</p>
                      <p>High: {high_price}</p>
                      <p>Low: {low_price}</p>
-                     <p>Close: {close_price}</p>"""
+                     <p>Close: {close_price}</p>"""  # Ensure closing triple quotes are correctly placed
         return result
     else:
         return "Failed to fetch data from Polygon API"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
-
